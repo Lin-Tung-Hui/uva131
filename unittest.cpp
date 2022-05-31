@@ -30,6 +30,6 @@ Hand: KS AH 2H 3C 4H Deck: KC 2C TC 2D AS Best hand: three-of-a-kind
 Hand: AH 2C 9S AD 3C Deck: QH KS JS JD KD Best hand: two-pairs
 Hand: 6C 9C 8C 2D 7C Deck: 2H TC 4C 9S AH Best hand: one-pair
 Hand: 3D 5S 2H QD TD Deck: 6S KH 9H AD QH Best hand: highest-card
-)--",  oss.str());
+)--",
+              oss.str());
 }
-
