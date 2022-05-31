@@ -73,19 +73,19 @@ std::vector< Poker > sort_porkers(std::stringstream &ss)
 
 bool is_straight(int num[])
 {
-    bool flag;
+    bool straight;
     for (int i = 1; i < 10; i++) {
         if (num[i] > 1)
             return false;
         if (num[i] == 1) {
-            flag = true;
+            straight = true;
             for (int j = 1; j < 5; j++) {
                 if (num[i + j] != 1) {
-                    flag = false;
+                    straight = false;
                     break;
                 }
             }
-            if (flag)
+            if (straight)
                 return true;
         }
     }
@@ -140,9 +140,9 @@ int find_best_hand(std::vector< Poker > &pokers, int cur)
             number_color++;
     }
 
-    bool link = is_straight(poker_number);
+    bool straight = is_straight(poker_number);
 
-    if (number_color == 1 && link)
+    if (number_color == 1 && straight)
         return 0;
     if (max_same_number == 4)
         return 1;
@@ -150,7 +150,7 @@ int find_best_hand(std::vector< Poker > &pokers, int cur)
         return 2;
     if (number_color == 1)
         return 3;
-    if (link)
+    if (straight)
         return 4;
     if (max_same_number == 3)
         return 5;
